@@ -1,0 +1,38 @@
+<div class="container mt-5">
+    <h2>{{ isEditMode ? 'Edit Player' : 'Add Player' }}</h2>
+    <form [formGroup]="playerForm" (ngSubmit)="savePlayer()">
+      
+      <div class="mb-3">
+        <label for="playerName" class="form-label">Player Name</label>
+        <input id="playerName" class="form-control" formControlName="playerName" />
+      </div>
+      <div class="mb-3">
+        <label for="jerseyNumber" class="form-label">Jersey Number</label>
+        <input id="jerseyNumber" class="form-control" formControlName="jerseyNumber" />
+      </div>
+      <div class="mb-3">
+        <label for="role" class="form-label">Role</label>
+        <input id="role" class="form-control" formControlName="role" />
+      </div>
+      <div class="mb-3">
+        <label for="totalMatches" class="form-label">Total Matches</label>
+        <input id="totalMatches" class="form-control" formControlName="totalMatches" />
+      </div>
+      <div class="mb-3">
+        <label for="teamName" class="form-label">Team Name</label>
+        <input id="teamName" class="form-control" formControlName="teamName" />
+      </div>
+      <div class="mb-3">
+        <label for="countryOrStateName" class="form-label">Country/State</label>
+        <input id="countryOrStateName" class="form-control" formControlName="countryOrStateName" />
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea id="description" class="form-control" formControlName="description"></textarea>
+      </div>
+      
+      <button class="btn btn-success" type="submit">{{ isEditMode ? 'Update' : 'Add' }}</button>
+      <button class="btn btn-secondary" type="button" (click)="router.navigate(['/players'])">Cancel</button>
+    </form>
+  </div>
+  
